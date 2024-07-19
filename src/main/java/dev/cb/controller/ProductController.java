@@ -30,7 +30,7 @@ public class ProductController {
 
     @GetMapping()
     public String getAllByCategoryAndMaxPrice(@RequestParam(required = false) Category category,
-                                           @RequestParam(defaultValue = "0.0") Double price,
+                                           @RequestParam(required = false) Double price,
                                            Model model) {
         model.addAttribute("products", productService.getAllByCategoryAndMaxPrice(category, price));
         return "products/list";

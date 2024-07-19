@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Products | Detail</title>
+    <span th:replace="~{products/list::style}"></span>
 </head>
 <body>
 <main>
@@ -14,6 +15,7 @@
     <div th:unless="${optionalProduct.isPresent()}">
         <p>The product doesn't exist.</p>
     </div>
+    <a th:href="@{/products}">Return</a>
 </main>
 </body>
 </html>

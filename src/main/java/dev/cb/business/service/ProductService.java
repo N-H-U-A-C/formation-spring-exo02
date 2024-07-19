@@ -33,10 +33,10 @@ public class ProductService {
 //        return products;
 //    }
 
-    public List<Product> getAllByCategoryAndMaxPrice(Category category, double price) {
+    public List<Product> getAllByCategoryAndMaxPrice(Category category, Double price) {
         return products.stream()
                 .filter(product -> category == null || product.getCategory().equals(category))
-                .filter(product -> price == 0.0 || product.getPrice() <= price)
+                .filter(product -> price == null || product.getPrice() <= price)
                 .toList();
     }
 
