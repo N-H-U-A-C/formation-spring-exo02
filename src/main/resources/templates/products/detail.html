@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Detail</title>
+</head>
+<body>
+<main>
+    <div th:if="${optionalProduct.isPresent()}">
+        <p>Name : <span th:text="${optionalProduct.get().getName()}"></span></p>
+        <p>Category : <span th:text="${optionalProduct.get().getCategory()}"></span></p>
+        <p>Price : <span th:text="${optionalProduct.get().getPrice()}"></span>$</p>
+    </div>
+    <div th:unless="${optionalProduct.isPresent()}">
+        <p>The product doesn't exist.</p>
+    </div>
+</main>
+</body>
+</html>

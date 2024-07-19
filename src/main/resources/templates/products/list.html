@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | List</title>
+</head>
+<body>
+<main>
+    <ul th:if="${!products.isEmpty()}">
+        <li th:each="product : ${products}"><span th:text="${product}"></span></li>
+    </ul>
+    <p th:unless="${!products.isEmpty()}">No product in stock.</p>
+</main>
+</body>
+</html>
